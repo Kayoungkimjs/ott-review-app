@@ -43,6 +43,10 @@ export const StyledListSection = styled.section`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    height: 50vh;
+  }
 `
 
 export const StyledSearchSection = styled.section`
