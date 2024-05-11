@@ -1,30 +1,59 @@
-# React + TypeScript + Vite
+# OTT Review Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> The OTT Review App offers integrated reviews of 9 major OTT services. <br>
+> Built as a responsive web app using React and TypeScript.
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
 
-## Expanding the ESLint configuration
+You can view the project live [here](https://kayoungkimjs.github.io/ott-review-app/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+<br>
 
-- Configure the top-level `parserOptions` property like this:
+## Features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- Review submission feature (category selection, star rating selection, review)
+- Save reviews to local storage
+- Listing reviews by star rating and title
+- Search items by title
+
+<br>
+
+## Technologies Used
+
+- React(Vite)
+- Typescript
+- emotion/styled
+- Recoil
+- Jest (test)
+
+<br>
+
+## Getting started
+
+Install npm packages
+
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Start dev server
+
+```bash
+npm run dev
+```
+
+- Access the default <http://localhost:5173>
+
+### production level
+
+```bash
+### 빌드
+npm run build
+
+## 실행
+npm run preview
+```
+
+- Access the default <http://localhost:4173>
