@@ -22,7 +22,7 @@ export const GlobalStyles = css`
 
   body {
     font-family: ${theme.fontFamilies.main};
-    color: ${theme.colors.blue};
+    color: ${theme.colors.title};
     overflow: hidden;
   }
 
