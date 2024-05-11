@@ -1,0 +1,5 @@
+export const MAX_WIDTH = '320px'
+export const HEIGHT = '95vh'
+export const TITLE_HEIGHT = '24px'
+export const REGISTER_HEIGHT = '392px'
+export const SEARCH_HEIGHT = '104px'
