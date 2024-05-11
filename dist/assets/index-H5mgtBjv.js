@@ -270,7 +270,7 @@ Error generating stack: `+i.message+`
     .cardGroup {
       width: 45%;
 
-      &:nth-child(2n-1) {
+      &:nth-of-type(2n-1) {
         margin-right: 5px;
       }
     }
@@ -300,7 +300,6 @@ Error generating stack: `+i.message+`
   width: ${({size:e})=>e==="small"?"24px":"32px"};
   height: ${({size:e})=>e==="small"?"24px":"32px"};
   overflow: hidden;
-  background-image: url('./assets/images/react.svg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -312,7 +311,7 @@ Error generating stack: `+i.message+`
     height: 100%;
     object-fit: cover;
   }
-`,vT=({className:e,category:t,size:n="small",options:r=[]})=>{var i;const o=r&&((i=r.find(l=>l.value===t))==null?void 0:i.image);return A.jsx(mT,{className:e,size:n,children:A.jsx("img",{src:`/assets/thumbnails/${o}`,alt:"thumbnail image"})})},yT=[{label:"1점",value:1},{label:"2점",value:2},{label:"3점",value:3},{label:"4점",value:4},{label:"5점",value:5}],Dv=[{label:"Netflix (넷플릭스)",value:1,image:"netflix.png"},{label:"Watcha (왓챠)",value:2,image:"watcha.png"},{label:"Tving (티빙)",value:3,image:"tving.png"},{label:"Wavve (웨이브)",value:4,image:"wavve.png"},{label:"Disney+ (디즈니플러스)",value:5,image:"disney.png"},{label:"Coupang Play (쿠팡플레이)",value:6,image:"coupang.png"},{label:"Apple TV+ (애플티비)",value:7,image:"apple.png"},{label:"Amazon Prime (아마존프라임)",value:8,image:"amazon.png"},{label:"Laftel (라프텔)",value:9,image:"laftel.png"}],gT=({reviewData:e})=>A.jsx(uT,{children:e.map((t,n)=>{const r=`${t.id}-${n}`;return A.jsxs("div",{className:"cardGroup",children:[A.jsxs("div",{className:"cardHeader",children:[A.jsx(vT,{category:t.category,options:Dv}),A.jsx("h3",{className:"cardTitle",children:t.title})]}),A.jsx(hT,{score:t.score}),A.jsx("p",{className:"cardComment",children:t.comment})]},r)})}),ST=_e.input`
+`,vT=({className:e,category:t,size:n="small",options:r=[]})=>{var l;const o=r&&((l=r.find(a=>a.value===t))==null?void 0:l.image);console.log("options",r),console.log("category",t),console.log("image",o);const i=a=>{const s=new URL(`/ott-review-app/assets/images/${a}.png`,import.meta.url).href;return console.log("imageurl",s),A.jsx("img",{src:s,alt:"thumbnail image"})};return A.jsx(mT,{className:e,size:n,children:o&&i(o)})},yT=[{label:"1점",value:1},{label:"2점",value:2},{label:"3점",value:3},{label:"4점",value:4},{label:"5점",value:5}],Dv=[{label:"Netflix (넷플릭스)",value:1,image:"netflix"},{label:"Watcha (왓챠)",value:2,image:"watcha"},{label:"Tving (티빙)",value:3,image:"tving"},{label:"Wavve (웨이브)",value:4,image:"wavve"},{label:"Disney+ (디즈니플러스)",value:5,image:"disney"},{label:"Coupang Play (쿠팡플레이)",value:6,image:"coupang"},{label:"Apple TV+ (애플티비)",value:7,image:"apple"},{label:"Amazon Prime (아마존프라임)",value:8,image:"amazon"},{label:"Laftel (라프텔)",value:9,image:"laftel"}],gT=({reviewData:e})=>A.jsx(uT,{children:e.map((t,n)=>{const r=`${t.id}-${n}`;return A.jsxs("div",{className:"cardGroup",children:[A.jsxs("div",{className:"cardHeader",children:[A.jsx(vT,{category:t.category,options:Dv}),A.jsx("h3",{className:"cardTitle",children:t.title})]}),A.jsx(hT,{score:t.score}),A.jsx("p",{className:"cardComment",children:t.comment})]},r)})}),ST=_e.input`
   ${rn("base")};
   display: block;
   width: 100%;
