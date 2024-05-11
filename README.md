@@ -3,13 +3,9 @@
 > The OTT Review App offers integrated reviews of 9 major OTT services. <br>
 > Built as a responsive web app using React and TypeScript.
 
-<br>
-
 ## Demo
 
 You can view the project live [here](https://kayoungkimjs.github.io/ott-review-app/).
-
-<br>
 
 ## Features
 
@@ -18,8 +14,6 @@ You can view the project live [here](https://kayoungkimjs.github.io/ott-review-a
 - Listing reviews by star rating and title
 - Search items by title
 
-<br>
-
 ## Technologies Used
 
 - React(Vite)
@@ -27,8 +21,6 @@ You can view the project live [here](https://kayoungkimjs.github.io/ott-review-a
 - emotion/styled
 - Recoil
 - Jest (test)
-
-<br>
 
 ## Getting started
 
@@ -49,10 +41,10 @@ npm run dev
 ### production level
 
 ```bash
-### 빌드
+## build
 npm run build
 
-## 실행
+## start
 npm run preview
 ```
 
