@@ -21,12 +21,14 @@ const letterSpacings = {
 const colors = {
   grey: '#b2b3b9',
   black: '#000',
-  border: '#ddd',
-  background: '#f5f5f5',
+  title: '#3F4150',
+  border: '#E0E2E7',
+  background: '#f7f8fa',
   white: '#fff',
-  blue: '#194e84',
-  lightBlue: '#1a5bb5',
-  yellow: '#fcf67b',
+  blue: '#3DA5F5',
+  lightBlue: '#ECF6FE',
+  darkBlue: '#3186C4',
+  yellow: '#fff58c',
   red: '#f86d7d',
 }
 
@@ -37,6 +39,11 @@ const levels = {
 
 export const gutter = '10px'
 
+const breakpoints = {
+  tablet: '768px',
+  desktop: '1200px',
+}
+
 export const theme: DefaultTheme = {
   colors,
   fontFamilies,
@@ -45,4 +52,5 @@ export const theme: DefaultTheme = {
   letterSpacings,
   levels,
   gutter,
+  breakpoints,
 }

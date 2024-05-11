@@ -12,8 +12,10 @@ declare module '@emotion/react' {
       white: string
       blue: string
       lightBlue: string
+      darkBlue: string
       yellow: string
       red: string
+      title: string
     }
 
     fontFamilies: {
@@ -39,5 +41,10 @@ declare module '@emotion/react' {
     }
 
     gutter: string
+
+    breakpoints: {
+      tablet: string
+      desktop: string
+    }
   }
 }
