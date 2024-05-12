@@ -138,7 +138,7 @@ const ReviewRegister = () => {
           />
         </div>
         {isFormSubmitted && !reviewInfo.comment && (
-          <ErrorInfo message={'한줄평을 입력해 주세요.'} />
+          <ErrorInfo message={'리뷰를 입력해 주세요.'} />
         )}
 
         <Button
