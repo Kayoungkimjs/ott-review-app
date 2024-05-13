@@ -46,6 +46,10 @@ export const StyledTextarea = styled.textarea`
   &:focus {
     border: 2px solid ${theme.colors.blue};
   }
+
+  @media (min-width: ${theme.breakpoints.desktop}) {
+    min-height: 70px;
+  }
 `
 
 export const StyledSelectGroup = styled.div`

@@ -28,6 +28,10 @@ export const StyledRegisterSection = styled.section`
   @media (min-width: ${theme.breakpoints.desktop}) {
     width: 100%;
     max-width: 600px;
+
+    .formItem {
+      margin-bottom: 20px;
+    }
   }
 `
 
