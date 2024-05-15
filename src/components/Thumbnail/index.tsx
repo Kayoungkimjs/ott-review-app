@@ -20,7 +20,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
 
   const createImageElement = (image: string) => {
     const imageUrl = new URL(
-      `${import.meta.env.VITE_PUBLIC_URL}/${image}.png`,
+      `${process.env.VITE_PUBLIC_URL}/${image}.png`,
       import.meta.url
     ).href
     return <img src={imageUrl} alt="thumbnail image" />
