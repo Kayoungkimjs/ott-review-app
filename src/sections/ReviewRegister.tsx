@@ -24,6 +24,8 @@ const ReviewRegister = () => {
   const [storedData, setStoredData] = useRecoilState(storedDataState)
   const [isFormSubmitted, setIsFormSubmitted] = useRecoilState(formSubmitState)
 
+  const { title, category, comment, score } = reviewInfo
+
   useEffect(() => {
     const storedData = getStoredReview()
     storedData && setStoredData(storedData)
@@ -31,8 +33,8 @@ const ReviewRegister = () => {
     setIsFormSubmitted(false)
   }, [setStoredData, setIsFormSubmitted])
 
-  const validateForm = (reviewInfo: ReviewItems) => {
-    return reviewInfo.title && reviewInfo.comment && reviewInfo.score
+  const validateForm = ({ title, comment, score }: ReviewItems) => {
+    return title && comment && score
   }
 
   const handleChange = (
@@ -49,8 +51,8 @@ const ReviewRegister = () => {
     const addReview = {
       ...reviewInfo,
       id: storedData.length + 1,
-      score: parseInt(String(reviewInfo.score), 10),
-      category: parseInt(String(reviewInfo.category), 10),
+      score: parseInt(String(score), 10),
+      category: parseInt(String(category), 10),
     }
 
     const updatedReviews = [...storedData, addReview]
@@ -83,13 +85,13 @@ const ReviewRegister = () => {
             id="category"
             name="category"
             title="카테고리"
-            value={reviewInfo.category}
+            value={category}
             options={CATEGORYOPTION}
             disabled={showModal}
             onChange={handleChange}
           />
         </div>
-        {isFormSubmitted && !reviewInfo.category && (
+        {isFormSubmitted && !category && (
           <ErrorInfo message={'OTT 종류을 선택해 주세요.'} />
         )}
         <div className="formItem">
@@ -99,12 +101,12 @@ const ReviewRegister = () => {
           <Input
             id="title"
             name="title"
-            value={reviewInfo.title}
+            value={title}
             onChange={handleChange}
             placeholder={'제목을 입력해 주세요'}
           />
         </div>
-        {isFormSubmitted && !reviewInfo.title && (
+        {isFormSubmitted && !title && (
           <ErrorInfo message={'프로그램 제목을 입력해 주세요.'} />
         )}
         <div className="formItem">
@@ -115,13 +117,13 @@ const ReviewRegister = () => {
             id="score"
             name="score"
             title="별점"
-            value={reviewInfo.score}
+            value={score}
             options={RATINGOPTION}
             disabled={showModal}
             onChange={handleChange}
           />
         </div>
-        {isFormSubmitted && !reviewInfo.score && (
+        {isFormSubmitted && !score && (
           <ErrorInfo message={'별점을 선택해 주세요.'} />
         )}
         <div className="formItem">
@@ -131,13 +133,13 @@ const ReviewRegister = () => {
           <Textarea
             id="comment"
             name="comment"
-            value={reviewInfo.comment}
+            value={comment}
             disabled={showModal}
             onChange={handleChange}
             placeholder={'내용을 입력해 주세요'}
           />
         </div>
-        {isFormSubmitted && !reviewInfo.comment && (
+        {isFormSubmitted && !comment && (
           <ErrorInfo message={'리뷰를 입력해 주세요.'} />
         )}
 

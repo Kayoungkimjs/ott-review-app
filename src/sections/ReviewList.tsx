@@ -16,6 +16,8 @@ const ReviewList = () => {
   const reviewInfo = useRecoilValue(reviewInfoState)
   const isFormSubmitted = useRecoilValue(formSubmitState)
 
+  const { title, category, comment, score } = reviewInfo
+
   const reviewOrder = (a: ReviewItems, b: ReviewItems) => {
     // 점수 비교 후, 오름차순 정렬
     if (a.score !== b.score) {
@@ -45,9 +47,7 @@ const ReviewList = () => {
     <StyledListSection
       ref={scrollRef}
       className={
-        (isFormSubmitted && !reviewInfo.title) ||
-        (isFormSubmitted && !reviewInfo.comment) ||
-        (isFormSubmitted && !reviewInfo.score)
+        isFormSubmitted && (!title || !category || !comment || !score)
           ? 'height'
           : ''
       }
