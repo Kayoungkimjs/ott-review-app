@@ -13,6 +13,7 @@ declare interface RatingSelectOption {
 
 declare interface CategorySelectOption {
   label: string
-  value: number
+  value?: number
   image: string
+  url: string
 }

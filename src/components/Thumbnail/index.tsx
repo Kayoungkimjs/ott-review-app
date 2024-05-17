@@ -1,3 +1,4 @@
+import { findOptionProperty } from '@/utils'
 import { StyledThumbnail } from './styles'
 
 export type ThumbnailSize = 'big' | 'small'
@@ -15,15 +16,20 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
   size = 'small',
   options = [],
 }) => {
-  const image =
-    options && options.find((option) => option.value === category)?.image
+  const image = findOptionProperty(options, category, 'image')?.toString()
+  const url = findOptionProperty(options, category, 'url')?.toString()
 
   const createImageElement = (image: string) => {
     const imageUrl = new URL(
       `${process.env.VITE_PUBLIC_URL}/${image}.png`,
       import.meta.url
     ).href
-    return <img src={imageUrl} alt="thumbnail image" />
+
+    return (
+      <a href={url} target="_blank">
+        <img src={imageUrl} alt="thumbnail image" />
+      </a>
+    )
   }
 
   return (
