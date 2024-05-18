@@ -1,5 +1,5 @@
 /** select option 해당 프로퍼티 찾기 */
-export const findOptionProperty = (
+export const findSelectoption = (
   options: CategorySelectOption[],
   value: number,
   property: keyof CategorySelectOption
