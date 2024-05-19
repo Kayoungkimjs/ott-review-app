@@ -8,7 +8,7 @@ export const StyledCard = styled.div`
 
   .cardGroup {
     padding: 25px 15px;
-    height: 200px; // TODO: 손보기
+    height: 200px;
     margin-bottom: 20px;
     background-color: ${theme.colors.lightBlue};
     border: 1px solid ${theme.colors.border};
