@@ -228,7 +228,7 @@ Error generating stack: `+i.message+`
 
   .cardGroup {
     padding: 25px 15px;
-    height: 200px; // TODO: 손보기
+    height: 200px;
     margin-bottom: 20px;
     background-color: ${F.colors.lightBlue};
     border: 1px solid ${F.colors.border};
@@ -303,12 +303,17 @@ Error generating stack: `+i.message+`
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 50%;
+  transition: border 200ms ease-in-out;
 
   img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  &:hover {
+    border: 3px solid ${F.colors.blue};
   }
 `,yT=({className:e,category:t,size:n="small",options:r=[]})=>{var a,s;const o=(a=Ld(r,t,"image"))==null?void 0:a.toString(),i=(s=Ld(r,t,"url"))==null?void 0:s.toString(),l=u=>{const f=new URL(`/ott-review-app/assets/images/${u}.png`,import.meta.url).href;return A.jsx("a",{href:i,target:"_blank",children:A.jsx("img",{src:f,alt:"thumbnail image"})})};return A.jsx(vT,{className:e,size:n,children:o&&l(o)})},gT=[{label:"1점",value:1},{label:"2점",value:2},{label:"3점",value:3},{label:"4점",value:4},{label:"5점",value:5}],Vv=[{label:"Netflix (넷플릭스)",value:1,image:"netflix",url:"https://www.netflix.com/kr/"},{label:"Watcha (왓챠)",value:2,image:"watcha",url:"https://watcha.com/"},{label:"Tving (티빙)",value:3,image:"tving",url:"https://www.tving.com/onboarding"},{label:"Wavve (웨이브)",value:4,image:"wavve",url:"https://www.wavve.com/"},{label:"Disney+ (디즈니플러스)",value:5,image:"disney",url:"https://www.disneyplus.com/"},{label:"Coupang Play (쿠팡플레이)",value:6,image:"coupang",url:"https://www.coupangplay.com/"},{label:"Apple TV+ (애플티비)",value:7,image:"apple",url:"https://tv.apple.com/kr"},{label:"Amazon Prime (아마존프라임)",value:8,image:"amazon",url:"https://www.primevideo.com/"},{label:"Laftel (라프텔)",value:9,image:"laftel",url:"https://laftel.net/"}],ST=({reviewData:e})=>A.jsx(cT,{children:e.map((t,n)=>{const r=`${t.id}-${n}`;return A.jsxs("div",{className:"cardGroup",children:[A.jsxs("div",{className:"cardHeader",children:[A.jsx(yT,{category:t.category,options:Vv}),A.jsx("h3",{className:"cardTitle",children:t.title})]}),A.jsx(mT,{score:t.score}),A.jsx("p",{className:"cardComment",children:t.comment})]},r)})}),wT=_e.input`
   ${rn("base")};
