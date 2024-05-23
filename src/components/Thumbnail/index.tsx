@@ -1,5 +1,6 @@
 import { findSelectoption } from '@/utils'
 import { StyledThumbnail } from './styles'
+import { useResponsive } from '@/hooks/useResponsive'
 
 export type ThumbnailSize = 'big' | 'small'
 
@@ -16,6 +17,8 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
   size = 'small',
   options = [],
 }) => {
+  const { isDesktop } = useResponsive()
+
   const image = findSelectoption(options, category, 'image')?.toString()
   const url = findSelectoption(options, category, 'url')?.toString()
 
@@ -33,7 +36,7 @@ export const Thumbnail: React.FC<ThumbnailProps> = ({
   }
 
   return (
-    <StyledThumbnail className={className} size={size}>
+    <StyledThumbnail className={className} size={isDesktop ? 'big' : size}>
       {image && createImageElement(image)}
     </StyledThumbnail>
   )
