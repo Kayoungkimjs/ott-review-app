@@ -65,9 +65,17 @@ const ReviewRegister = () => {
     setIsFormSubmitted(true)
 
     if (validateForm(reviewInfo) && !preventFormSubmit) {
-      addReview()
-      setReviewInfo(INITIALDATA)
-      handleModalOpen()
+      try {
+        addReview()
+        setReviewInfo(INITIALDATA)
+        handleModalOpen()
+      } catch (error) {
+        console.error('등록 중 에러가 발생했습니다', error)
+      } finally {
+        setIsFormSubmitted(false)
+        setPreventFormSubmit(false)
+      }
+    } else {
       setIsFormSubmitted(false)
       setPreventFormSubmit(false)
     }
