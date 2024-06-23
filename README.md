@@ -7,6 +7,9 @@
 
 You can view the project live [here](https://kayoungkimjs.github.io/ott-review-app/).
 
+## Preview
+![ottReviewApp](https://github.com/Kayoungkimjs/various-charts/assets/83155239/a02c9849-4905-49e7-91ef-a870b854d4db)
+
 ## Features
 
 - Review submission feature (category selection, star rating selection, review)
