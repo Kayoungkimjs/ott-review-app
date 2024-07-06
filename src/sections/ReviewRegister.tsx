@@ -97,6 +97,7 @@ const ReviewRegister = () => {
             options={CATEGORYOPTION}
             disabled={showModal}
             onChange={handleChange}
+            label={CATEGORYOPTION.find((i) => i.label)?.label ?? ''}
           />
         </div>
         {isFormSubmitted && !category && (
@@ -129,6 +130,7 @@ const ReviewRegister = () => {
             options={RATINGOPTION}
             disabled={showModal}
             onChange={handleChange}
+            label={RATINGOPTION.find((i) => i.label)?.label ?? ''}
           />
         </div>
         {isFormSubmitted && !score && (

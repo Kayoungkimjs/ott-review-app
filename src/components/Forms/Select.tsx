@@ -2,12 +2,13 @@ import { ChangeEvent } from 'react'
 import { StyledSelect, StyledSelectGroup } from './styles'
 import { CaretIcon } from '../../../public/assets/svg'
 
-interface SelectProps {
+interface SelectProps<T> {
   id: string
   name?: string
   title?: string
   value: string | number
-  options: RatingSelectOption[] | CategorySelectOption[]
+  label: string
+  options: T[]
   className?: string
   selected?: string | number
   required?: boolean
@@ -15,7 +16,12 @@ interface SelectProps {
   onChange?: (e: ChangeEvent<HTMLSelectElement>) => void
 }
 
-export const Select: React.FC<SelectProps> = ({
+interface Option {
+  value?: string | number
+  label?: string
+}
+
+export const Select = <T extends Option>({
   id,
   name,
   title,
@@ -25,7 +31,7 @@ export const Select: React.FC<SelectProps> = ({
   required,
   disabled,
   onChange,
-}) => {
+}: SelectProps<T>) => {
   return (
     <StyledSelectGroup>
       <StyledSelect
@@ -38,16 +44,17 @@ export const Select: React.FC<SelectProps> = ({
         onChange={onChange}
       >
         <option value="0" disabled hidden>
-          {title} 선택
+          {title}
         </option>
-        {options.map((option, i) => {
-          const key = `${option.value}-${id}-${i}`
-          return (
-            <option value={option.value} key={key}>
-              {option.label}
-            </option>
-          )
-        })}
+        {options &&
+          options.map((option, i) => {
+            const key = `${option.value}-${id}-${i}`
+            return (
+              <option value={option.value} key={key}>
+                {option.label}
+              </option>
+            )
+          })}
       </StyledSelect>
       <CaretIcon className="icon" />
     </StyledSelectGroup>
