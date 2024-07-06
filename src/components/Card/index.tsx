@@ -3,14 +3,14 @@ import { StarRating } from '../StarRating'
 import { Thumbnail } from '../Thumbnail'
 import { CATEGORYOPTION } from '../../constants/selectOption'
 
-interface CardProps {
-  reviewData: ReviewItems[]
+interface CardProps<T> {
+  data: T[]
 }
 
-export const Card: React.FC<CardProps> = ({ reviewData }) => {
+export const Card = <T,>({ data }: CardProps<T>) => {
   return (
     <StyledCard>
-      {reviewData.map((item, i) => {
+      {data.map((item, i) => {
         const key = `${item.id}-${i}`
         return (
           <div className="cardGroup" key={key}>
