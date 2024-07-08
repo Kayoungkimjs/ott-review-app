@@ -7,7 +7,15 @@ interface CardProps<T> {
   data: T[]
 }
 
-export const Card = <T,>({ data }: CardProps<T>) => {
+interface DataProps {
+  id: number
+  category: number
+  title: string
+  score: number
+  comment: string
+}
+
+export const Card = <T extends DataProps>({ data }: CardProps<T>) => {
   return (
     <StyledCard>
       {data.map((item, i) => {

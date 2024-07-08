@@ -55,7 +55,7 @@ const ReviewList = () => {
       <StyledCardSection>
         <div className="card">
           {reviewData.length ? (
-            <Card reviewData={reviewData} />
+            <Card data={reviewData} />
           ) : (
             <p className="noInfo">검색 결과가 없습니다.</p>
           )}
